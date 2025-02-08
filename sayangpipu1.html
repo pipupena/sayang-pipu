@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayang Pipu Ga?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: dodgerblue;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .button-yes {
+            background-color: white;
+            color: dodgerblue;
+        }
+        .button-no {
+            background-color: white;
+            color: dodgerblue;
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sayang Pipu Ga?</h1>
+    <div class="button-container">
+        <button class="button button-yes" onclick="handleYes()">Sayang</button>
+        <button class="button button-no" onclick="handleNo()">G</button>
+    </div>
+    <div class="message" id="message">Yey I Love U. Sekarang Cium!!</div>
+
+    <script>
+        let yesButton = document.querySelector('.button-yes');
+        let noButton = document.querySelector('.button-no');
+        let message = document.getElementById('message');
+        let question = document.querySelector('h1');
+
+        function handleYes() {
+            message.style.display = 'block';
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+            question.style.display = 'none';
+            yesButton.style.width = '100%';
+            yesButton.style.height = '100vh';
+            yesButton.style.position = 'fixed';
+            yesButton.style.top = '0';
+            yesButton.style.left = '0';
+            yesButton.style.borderRadius = '0';
+            yesButton.style.fontSize = '24px';
+        }
+
+        function handleNo() {
+            noButton.style.fontSize = `${parseInt(window.getComputedStyle(noButton).fontSize) - 5}px`;
+            yesButton.style.fontSize = `${parseInt(window.getComputedStyle(yesButton).fontSize) + 10}px`;
+        }
+    </script>
+</body>
+</html>
